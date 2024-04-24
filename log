@@ -70,3 +70,13 @@ hashmap.c:69:18: error: ‘Pair’ has no member named ‘nextMap’
       |                  ^~
 Compilation failed
 d2e3a2b
+Wed 24 Apr 2024 11:19:34 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:69:18: error: ‘Pair’ has no member named ‘next’
+   69 |         par = par->next;
+      |                  ^~
+Compilation failed
+3af7f81

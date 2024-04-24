@@ -66,7 +66,7 @@ void enlarge(HashMap *map) {
       Pair *par = aux[i];
       while (par != NULL) {
         insertMap(map, par->key, par->value);
-        par = par->nextMap;
+        par = par->next;
       }
     }
   }
