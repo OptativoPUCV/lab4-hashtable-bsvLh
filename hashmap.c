@@ -39,27 +39,19 @@ int is_equal(void *key1, void *key2) {
   return 0;
 }
 
-void insertMap(HashMap *map, char *key, void *value) {
-  if (map == NULL)
-    return;
-  if (map->size == map->capacity) {
-    enlarge(map);
-  }
-  long posicion = hash(key, map->capacity);
-  Pair *par = createPair(key, value);
-  if (map->buckets[posicion] == NULL) {
-    map->buckets[posicion] = par;
-    map->size++;
-    return;
-  } else {
-    Pair *aux = map->buckets[posicion];
-    while (aux->nextMap != NULL) {
-      aux = aux->nextMap;
-    }
-    aux->nextMap = par;
-    map->size++;
-    return;
-  }
+HashMap *createMap(long capacity) {
+  HashMap *mapa = (HashMap *)malloc(sizeof(HashMap));
+  mapa->buckets = (Pair **)calloc(capacity, sizeof(Pair *));
+  mapa->size = 0;
+  mapa->capacity = capacity;
+  mapa->current = -1;
+  return mapa;
+}
+
+void insertMap(HashMap *map, char *key, void *value)
+{
+  if (map == NULL) return;
+
 }
 
 void enlarge(HashMap *map) {
@@ -80,14 +72,6 @@ void enlarge(HashMap *map) {
   }
 }
 
-HashMap *createMap(long capacity) {
-  HashMap *mapa = (HashMap *)malloc(sizeof(HashMap));
-  mapa->buckets = (Pair **)calloc(capacity, sizeof(Pair *));
-  mapa->size = 0;
-  mapa->capacity = capacity;
-  mapa->current = -1;
-  return mapa;
-}
 
 void eraseMap(HashMap *map, char *key) {}
 
