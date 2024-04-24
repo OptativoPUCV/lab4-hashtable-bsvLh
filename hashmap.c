@@ -53,10 +53,10 @@ void insertMap(HashMap *map, char *key, void *value) {
     return;
   } else {
     Pair *aux = map->buckets[posicion];
-    while (aux->next != NULL) {
-      aux = aux->next;
+    while (aux->nextMap != NULL) {
+      aux = aux->nextMap;
     }
-    aux->next = par;
+    aux->nextMap = par;
     map->size++;
     return;
   }

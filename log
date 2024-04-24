@@ -24,3 +24,19 @@ hashmap.c:59:8: error: ‘Pair’ has no member named ‘next’
       |        ^~
 Compilation failed
 8e8483d
+Wed 24 Apr 2024 11:13:27 PM UTC: 
+ hashmap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:56:15: error: ‘Pair’ has no member named ‘nextMap’
+   56 |     while (aux->nextMap != NULL) {
+      |               ^~
+hashmap.c:57:16: error: ‘Pair’ has no member named ‘nextMap’
+   57 |       aux = aux->nextMap;
+      |                ^~
+hashmap.c:59:8: error: ‘Pair’ has no member named ‘nextMap’
+   59 |     aux->nextMap = par;
+      |        ^~
+Compilation failed
+b58bf5c
