@@ -71,7 +71,7 @@ void insertMap(HashMap *map, char *key, void *value)
 void enlarge(HashMap *map) {
   if (map == NULL) return;
   enlarge_called = 1; // no borrar (testing purposes)
-  long i;
+  int i;
   Pair **aux = map->buckets;
   map->buckets = (Pair **)calloc(map->capacity * 2, sizeof(Pair *));
   map->capacity *= 2;
