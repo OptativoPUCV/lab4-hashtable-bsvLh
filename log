@@ -138,3 +138,23 @@ Sat 27 Apr 2024 03:17:27 AM UTC:
  tests:  9|2
 total_score: 50/70
 bfd7533
+Sat 27 Apr 2024 03:24:57 AM UTC: 
+ hashmap.c | 12 +++++++++++-
+ 1 file changed, 11 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:112:5: error: expected ‘)’ before ‘{’ token
+  112 |     {
+      |     ^
+hashmap.c:111:9: note: to match this ‘(’
+  111 |   while (map->current + 1 < map->capacity && map->buckets[map->current + 1] == NULL
+      |         ^
+hashmap.c:118:1: error: expected expression before ‘}’ token
+  118 | }
+      | ^
+hashmap.c:118:1: error: control reaches end of non-void function [-Werror=return-type]
+  118 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+f5fe97c
