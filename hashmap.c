@@ -121,13 +121,26 @@ Pair *searchMap(HashMap *map, char *key)
   return NULL;
 }
 
-Pair *firstMap(HashMap *map) { return NULL; }
+Pair *firstMap(HashMap *map)
+{ 
+  if (map == NULL || map->size == 0) return NULL;
+  map->current = 0;
+  while (map->buckets[map->current] == NULL || map->buckets[map->current]->key == NULL
+    {
+      map->current++;
+      
+    }
+  return map->buckets[map->current];
+}
 
 Pair *nextMap(HashMap *map)
 {
   if (map == NULL) return NULL;
-  
-
-  return NULL; 
+  map->current++;
+  while (map->buckets[map->current] == NULL || map->buckets[map->current]->key == NULL
+    {
+      map->current++;
+    }
+  return map->buckets[map->current];
 
 }
