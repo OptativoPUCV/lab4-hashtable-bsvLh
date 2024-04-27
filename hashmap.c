@@ -151,7 +151,8 @@ Pair * nextMap(HashMap * map)
 Pair *nextMap(HashMap *map)
 {
   if (map == NULL) return NULL;
-  long aux = map->current++;
+  
+  long aux = map->current + 1;
   
   while (map->buckets[aux] == NULL || map->buckets[aux]->key == NULL)
     {
